@@ -7,6 +7,7 @@
 
 int main(int argc, char *args[])
 {
+    //文件描述符以文件形式保存于/dev/fd下
     //mode用于在创建新文件时指定文件的权限,如S_IRUSR表示用户读
     //int fd1 = open("./test.txt", O_RDWR | O_APPEND | O_CREAT, S_IRUSR);
     int fd1 = open("./test.txt", O_RDWR | O_CREAT | O_TRUNC, S_IRUSR);
@@ -93,6 +94,7 @@ int main(int argc, char *args[])
         perror("fdatasync file error");
     }
     // int ioctl (int __fd, int __cmd, ...); //多用于终端I/O
+
     char str[10];
     scanf("%s",str);
     return 0;
